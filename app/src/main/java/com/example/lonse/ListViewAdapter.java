@@ -7,7 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.lonse.view.slideLayout;
+import com.example.lonse.view.SlideLayout;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ListViewAdapter extends BaseAdapter {
 
     private ArrayList<ContactEntity> mData;
-    private slideLayout mslideLayout;
+    private SlideLayout mslideLayout;
 
     ListViewAdapter(ArrayList<ContactEntity> data){
         this.mData = data;

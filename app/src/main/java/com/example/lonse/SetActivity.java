@@ -7,7 +7,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class setActivity extends AppCompatActivity {
+public class SetActivity extends AppCompatActivity {
     ImageView setBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class setActivity extends AppCompatActivity {
         setBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(setActivity.this, MainActivity.class);
+                Intent intent = new Intent(SetActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

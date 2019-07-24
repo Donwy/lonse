@@ -16,8 +16,8 @@ import android.widget.ToggleButton;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class passwordChangeActivity extends AppCompatActivity{
-    private static final String TAG = "passwordChangeActivity";
+public class PasswordChangeActivity extends AppCompatActivity{
+    private static final String TAG = "PasswordChangeActivity";
     ToggleButton toggleButtonOld;
     EditText pwOld;
     @Override
@@ -34,7 +34,7 @@ public class passwordChangeActivity extends AppCompatActivity{
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(passwordChangeActivity.this,MainActivity.class);
+                Intent intent = new Intent(PasswordChangeActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });

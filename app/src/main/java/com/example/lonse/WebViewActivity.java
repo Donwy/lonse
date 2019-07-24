@@ -6,8 +6,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class webViewActivity extends AppCompatActivity {
-    private static final String TAG = "webViewActivity";
+public class WebViewActivity extends AppCompatActivity {
+    private static final String TAG = "WebViewActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

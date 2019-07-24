@@ -8,21 +8,21 @@ import android.view.ViewConfiguration;
 import androidx.core.view.MotionEventCompat;
 import androidx.slidingpanelayout.widget.SlidingPaneLayout;
 
-public class slideMenu extends SlidingPaneLayout {
+public class SlideMenu extends SlidingPaneLayout {
     private float mInitialMotionX;
     private float mInitialMotionY;
     /** 最小触发事件的划动距离 */
     private float mEdgeSlop;//手滑动的距离
 
-    public slideMenu(Context context) {
+    public SlideMenu(Context context) {
         this(context, null);
     }
 
-    public slideMenu(Context context, AttributeSet attrs) {
+    public SlideMenu(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public slideMenu(Context context, AttributeSet attrs, int defStyle) {
+    public SlideMenu(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
         //--------  ViewConfiguration 滑动参数设置类 --------//

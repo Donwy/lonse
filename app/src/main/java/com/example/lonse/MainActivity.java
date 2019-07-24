@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         buttonWebview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, webViewActivity.class);
+                Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
                 startActivity(intent);
             }
         });
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         buttonSidebar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, sideBarActivity.class);
+                Intent intent = new Intent(MainActivity.this, SideBarActivity.class);
                 startActivity(intent);
             }
         });
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         buttonSlideMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, slideMenuActivity.class);
+                Intent intent = new Intent(MainActivity.this, SlideMenuActivity.class);
                 startActivity(intent);
             }
         });
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         buttonPwChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, passwordChangeActivity.class);
+                Intent intent = new Intent(MainActivity.this, PasswordChangeActivity.class);
                 startActivity(intent);
             }
         });
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         buttonSet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, setActivity.class);
+                Intent intent = new Intent(MainActivity.this, SetActivity.class);
                 startActivity(intent);
             }
         });
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         buttonAccounts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, accountsActivity.class);
+                Intent intent = new Intent(MainActivity.this, AccountsActivity.class);
                 startActivity(intent);
             }
         });
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, loginActivity.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         buttonListview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, listviewActivity.class);
+                Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
                 startActivity(intent);
             }
         });

@@ -11,7 +11,7 @@ import android.widget.Scroller;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class slideLayout extends FrameLayout {
+public class SlideLayout extends FrameLayout {
 
     private View mContentView;
     private View mMenuView;
@@ -26,7 +26,7 @@ public class slideLayout extends FrameLayout {
     private float startX;
     private float startY;
 
-    public slideLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public SlideLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context,attrs);
         mScroller = new Scroller(context);
     }

@@ -12,9 +12,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.navigation.NavigationView;
 
 
-public class sideBarActivity extends AppCompatActivity
+public class SideBarActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
-    private static final String TAG = "sideBarActivity";
+    private static final String TAG = "SideBarActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

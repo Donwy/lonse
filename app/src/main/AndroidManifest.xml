@@ -17,25 +17,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".webViewActivity"></activity>
-        <activity android:name=".sideBarActivity"
+        <activity android:name=".WebViewActivity"></activity>
+        <activity android:name=".SideBarActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".slideMenuActivity"
+        <activity android:name=".SlideMenuActivity"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
-        <activity android:name=".passwordChangeActivity"
+        <activity android:name=".PasswordChangeActivity"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
-        <activity android:name=".setActivity"
+        <activity android:name=".SetActivity"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
-        <activity android:name=".accountsActivity"
+        <activity android:name=".AccountsActivity"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
-        <activity android:name=".loginActivity"
+        <activity android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
-        <activity android:name=".listviewActivity"
+        <activity android:name=".ListViewActivity"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
     </application>

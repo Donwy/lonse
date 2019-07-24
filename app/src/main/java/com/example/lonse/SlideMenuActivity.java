@@ -8,12 +8,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.slidingpanelayout.widget.SlidingPaneLayout;
 
-import com.example.lonse.view.slideMenu;
+import com.example.lonse.view.SlideMenu;
 
-public class slideMenuActivity extends AppCompatActivity {
+public class SlideMenuActivity extends AppCompatActivity {
 
     /** 侧划控件 */
-    private slideMenu slidMenuLayout;
+    private SlideMenu slidMenuLayout;
 
 
     @Override
@@ -21,7 +21,7 @@ public class slideMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slide_mainlayout);
 
-        slidMenuLayout = (slideMenu) findViewById(R.id.slidMenuLayout);
+        slidMenuLayout = (SlideMenu) findViewById(R.id.slidMenuLayout);
         initSlidingPaneLayout();
     }
 
