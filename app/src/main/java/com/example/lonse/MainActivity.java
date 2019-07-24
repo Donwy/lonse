@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonSet = (Button) findViewById(R.id.bt_set);
         Button buttonLogin = (Button) findViewById(R.id.bt_login);
         Button buttonAccounts = (Button) findViewById(R.id.bt_accouts);
+        Button buttonListview = (Button) findViewById(R.id.bt_listview);
 //        Button buttonGesturePassword = (Button) findViewById(R.id.bt_slidemenu);
         //webview的使用
         buttonWebview.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +80,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, loginActivity.class);
+                startActivity(intent);
+            }
+        });
+        //登录界面的使用
+        buttonListview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, listviewActivity.class);
                 startActivity(intent);
             }
         });
