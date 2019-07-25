@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class ListViewActivity extends AppCompatActivity {
+
     private ListView lvContact;
 
     private ArrayList<ContactEntity> mData;

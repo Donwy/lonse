@@ -65,27 +65,27 @@ public class ListViewAdapter extends BaseAdapter {
             });
 
 
-//            mslideLayout = (slideLayout) convertView;
-//            mslideLayout.setOnSlideChangeListenr(new slideLayout.onSlideChangeListenr() {
-//                @Override
-//                public void onMenuOpen(slideLayout slideLayout) {
-//                    mslideLayout = slideLayout;
-//                }
-//
-//                @Override
-//                public void onMenuClose(slideLayout slideLayout) {
-//                    if (mslideLayout != null) {
-//                        mslideLayout = null;
-//                    }
-//                }
-//
-//                @Override
-//                public void onClick(slideLayout slideLayout) {
-//                    if (mslideLayout != null) {
-//                        mslideLayout.closeMenu();
-//                    }
-//                }
-//            });
+            mslideLayout = (SlideLayout) convertView;
+            mslideLayout.setOnSlideChangeListen(new SlideLayout.onSlideChangeListen() {
+                @Override
+                public void onMenuOpen(SlideLayout slideLayout) {
+                    mslideLayout = slideLayout;
+                }
+
+                @Override
+                public void onMenuClose(SlideLayout slideLayout) {
+                    if (mslideLayout != null) {
+                        mslideLayout = null;
+                    }
+                }
+
+                @Override
+                public void onClick(SlideLayout slideLayout) {
+                    if (mslideLayout != null) {
+                        mslideLayout.closeMenu();
+                    }
+                }
+            });
         return convertView;
     }
     
