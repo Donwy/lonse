@@ -1,4 +1,4 @@
-package com.example.lonse;
+package com.example.lonse.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +15,8 @@ import android.widget.ListPopupWindow;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.lonse.R;
 
 import java.util.ArrayList;
 import java.util.List;

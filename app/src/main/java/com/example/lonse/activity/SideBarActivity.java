@@ -1,4 +1,4 @@
-package com.example.lonse;
+package com.example.lonse.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.lonse.R;
 import com.google.android.material.navigation.NavigationView;
 
 

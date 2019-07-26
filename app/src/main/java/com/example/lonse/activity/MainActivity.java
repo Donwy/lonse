@@ -1,4 +1,4 @@
-package com.example.lonse;
+package com.example.lonse.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.lonse.R;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonPwChange = (Button) findViewById(R.id.bt_passwordchange);
         Button buttonSet = (Button) findViewById(R.id.bt_set);
         Button buttonLogin = (Button) findViewById(R.id.bt_login);
-        Button buttonAccounts = (Button) findViewById(R.id.bt_accouts);
+//        Button buttonAccounts = (Button) findViewById(R.id.bt_accouts);
         Button buttonListview = (Button) findViewById(R.id.bt_listview);
 //        Button buttonGesturePassword = (Button) findViewById(R.id.bt_slidemenu);
         //webview的使用
@@ -66,14 +68,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //切换界面的使用
-        buttonAccounts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AccountsActivity.class);
-                startActivity(intent);
-            }
-        });
+//        //切换界面的使用
+//        buttonAccounts.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this, AccountsActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         //登录界面的使用
         buttonLogin.setOnClickListener(new View.OnClickListener() {

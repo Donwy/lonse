@@ -1,15 +1,19 @@
-package com.example.lonse;
+package com.example.lonse.activity;
 
 import android.os.Bundle;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.lonse.ContactEntity;
+import com.example.lonse.R;
+import com.example.lonse.adapter.ListViewAdapter;
+
 import java.util.ArrayList;
 
 public class ListViewActivity extends AppCompatActivity {
 
-    private ListView lvContact;
+    private ListView  lvContact;
 
     private ArrayList<ContactEntity> mData;
     private ListViewAdapter mAdapter;

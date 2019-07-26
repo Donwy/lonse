@@ -1,4 +1,4 @@
-package com.example.lonse;
+package com.example.lonse.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lonse.ContactEntity;
+import com.example.lonse.R;
 import com.example.lonse.view.SlideLayout;
 
 import java.util.ArrayList;
@@ -16,9 +18,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ListViewAdapter extends BaseAdapter {
 
     private ArrayList<ContactEntity> mData;
-    private SlideLayout mslideLayout;
+    private SlideLayout mSlideLayout;
 
-    ListViewAdapter(ArrayList<ContactEntity> data){
+    public ListViewAdapter(ArrayList<ContactEntity> data){
         this.mData = data;
     }
     @Override
@@ -65,24 +67,24 @@ public class ListViewAdapter extends BaseAdapter {
             });
 
 
-            mslideLayout = (SlideLayout) convertView;
-            mslideLayout.setOnSlideChangeListen(new SlideLayout.onSlideChangeListen() {
+            mSlideLayout = (SlideLayout) convertView;
+            mSlideLayout.setOnSlideChangeListen(new SlideLayout.onSlideChangeListen() {
                 @Override
                 public void onMenuOpen(SlideLayout slideLayout) {
-                    mslideLayout = slideLayout;
+                    mSlideLayout = slideLayout;
                 }
 
                 @Override
                 public void onMenuClose(SlideLayout slideLayout) {
-                    if (mslideLayout != null) {
-                        mslideLayout = null;
+                    if (mSlideLayout != null) {
+                        mSlideLayout = null;
                     }
                 }
 
                 @Override
                 public void onClick(SlideLayout slideLayout) {
-                    if (mslideLayout != null) {
-                        mslideLayout.closeMenu();
+                    if (mSlideLayout != null) {
+                        mSlideLayout.closeMenu();
                     }
                 }
             });

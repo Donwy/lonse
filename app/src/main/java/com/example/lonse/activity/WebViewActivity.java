@@ -1,10 +1,13 @@
-package com.example.lonse;
+package com.example.lonse.activity;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.lonse.R;
 
 public class WebViewActivity extends AppCompatActivity {
     private static final String TAG = "WebViewActivity";

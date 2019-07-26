@@ -1,9 +1,12 @@
-package com.example.lonse;
+package com.example.lonse.activity;
 
 import android.os.Bundle;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.lonse.AccountEntity;
+import com.example.lonse.R;
 
 import java.util.ArrayList;
 

@@ -5,7 +5,7 @@ public class ContactEntity {
     private String mName;
     private String mMessage;
 
-    ContactEntity(int photo, String name,String message){
+    public ContactEntity(int photo, String name, String message){
         this.mPhoto = photo;
         this.mName = name;
         this.mMessage = message;

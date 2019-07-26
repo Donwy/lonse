@@ -1,4 +1,4 @@
-package com.example.lonse;
+package com.example.lonse.activity;
 
 
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.slidingpanelayout.widget.SlidingPaneLayout;
 
+import com.example.lonse.R;
 import com.example.lonse.view.SlideMenu;
 
 public class SlideMenuActivity extends AppCompatActivity {

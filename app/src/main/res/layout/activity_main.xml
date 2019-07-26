@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,12 +46,12 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="@string/bt_set"/>
-        <Button
-            android:id="@+id/bt_accouts"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAllCaps="false"
-            android:text="@string/bt_accounts"/>
+        <!--<Button-->
+            <!--android:id="@+id/bt_accouts"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:text="@string/bt_accounts"/>-->
         <Button
             android:id="@+id/bt_listview"
             android:layout_width="match_parent"
