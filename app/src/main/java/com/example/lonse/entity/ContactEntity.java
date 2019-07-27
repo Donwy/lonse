@@ -1,4 +1,4 @@
-package com.example.lonse;
+package com.example.lonse.entity;
 
 public class ContactEntity {
     private int mPhoto;

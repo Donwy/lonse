@@ -5,7 +5,7 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.lonse.AccountEntity;
+import com.example.lonse.entity.AccountEntity;
 import com.example.lonse.R;
 
 import java.util.ArrayList;

@@ -3,6 +3,7 @@ package com.example.lonse.view;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -64,13 +65,20 @@ public class SlideLayout extends FrameLayout {
         mContentHeight = getMeasuredHeight();
         mMenuWidth = mMenuView.getMeasuredWidth();
         mMenuHeight = mMenuView.getMeasuredHeight();
+        Log.d(TAG, "onMeasure: " + mContentWidth + " | " + mContentHeight + " | " + mMenuWidth + " | " + mMenuHeight);
     }
+
 
     @Override
     protected void onLayout(boolean changed,int left,int top,int right,int bottom){
         super.onLayout(changed, left, top, right, bottom);
 
-        //将menu布局到右侧不可见（屏幕外）
+        /**
+         * 将menu布局到右侧不可见（屏幕外）
+         *layout(int l,int t,int r, int b)
+         * layout（）是view的方法、onLayout是viewGround的方法
+         * l，t，r，b是表示组件的左，上，右，下的边线的位置，相对父组件开始计算
+         */
         mMenuView.layout(mContentWidth,0,mContentWidth + mMenuWidth,mMenuHeight);
     }
 
@@ -82,7 +90,9 @@ public class SlideLayout extends FrameLayout {
     @Override
     public boolean onTouchEvent(MotionEvent event){
 
-        /*获取x,y的值*/
+        /**
+         * 获取x,y的值
+         */
         final float x = event.getX();
         final float y = event.getY();
         switch (event.getAction()){
@@ -139,7 +149,7 @@ public class SlideLayout extends FrameLayout {
             case MotionEvent.ACTION_DOWN:
                 downX = x;
                 downY = y;
-                if(onSlideChangeListen !=null ){
+                if(onSlideChangeListen != null ){
                     onSlideChangeListen.onClick(this);
                 }
                 break;

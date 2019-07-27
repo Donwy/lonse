@@ -2,6 +2,8 @@ package com.example.lonse.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -39,6 +41,8 @@ public class LoginActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.bt_back);
         toggleButtonAccount = (ToggleButton) findViewById(R.id.login_tb_account);
         toggleButtonPassword = (ToggleButton) findViewById(R.id.login_tb_pw);
+        setEditTextInhibitInputSpace(editTextAccount);
+        setEditTextInhibitInputSpace(editTextPassword);
 
         lists.add("one");
         lists.add("two");
@@ -85,5 +89,23 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    /**
+     * 禁止输入空格
+     * @param editText
+     */
+    private static void setEditTextInhibitInputSpace(EditText editText){
+        InputFilter inputFilter = new InputFilter() {
+            @Override
+            public CharSequence filter(CharSequence charSequence, int start, int end, Spanned dest, int dstart, int dend) {
+                if(charSequence.equals(" ")){
+                    return "";
+                }else {
+                    return null;
+                }
+            }
+        };
+        editText.setFilters(new InputFilter[]{inputFilter});
     }
 }

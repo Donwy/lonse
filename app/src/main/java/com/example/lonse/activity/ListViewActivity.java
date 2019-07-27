@@ -5,7 +5,7 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.lonse.ContactEntity;
+import com.example.lonse.entity.ContactEntity;
 import com.example.lonse.R;
 import com.example.lonse.adapter.ListViewAdapter;
 
