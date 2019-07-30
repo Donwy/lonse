@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         buttonSlideMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SlideMenuActivity.class);
+                Intent intent = new Intent(MainActivity.this, SlideMainActivity.class);
                 startActivity(intent);
             }
         });

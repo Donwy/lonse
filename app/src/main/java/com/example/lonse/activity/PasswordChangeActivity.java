@@ -93,6 +93,8 @@ public class PasswordChangeActivity extends AppCompatActivity{
                 }
             }
         };
+
+
         editText.setFilters(new InputFilter[]{inputFilter});
     }
 }

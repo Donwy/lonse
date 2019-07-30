@@ -3,7 +3,6 @@ package com.example.lonse.view;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -65,7 +64,7 @@ public class SlideLayout extends FrameLayout {
         mContentHeight = getMeasuredHeight();
         mMenuWidth = mMenuView.getMeasuredWidth();
         mMenuHeight = mMenuView.getMeasuredHeight();
-        Log.d(TAG, "onMeasure: " + mContentWidth + " | " + mContentHeight + " | " + mMenuWidth + " | " + mMenuHeight);
+//        Log.d(TAG, "onMeasure: " + mContentWidth + " | " + mContentHeight + " | " + mMenuWidth + " | " + mMenuHeight);
     }
 
 

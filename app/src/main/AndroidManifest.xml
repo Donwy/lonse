@@ -20,7 +20,7 @@
         <activity android:name=".activity.WebViewActivity"></activity>
         <activity android:name=".activity.SideBarActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".activity.SlideMenuActivity"
+        <activity android:name=".activity.SlideMainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
         <activity android:name=".activity.PasswordChangeActivity"

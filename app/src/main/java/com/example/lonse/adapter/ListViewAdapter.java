@@ -1,16 +1,18 @@
 package com.example.lonse.adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.lonse.entity.ContactEntity;
+
 import com.example.lonse.R;
+import com.example.lonse.entity.ContactEntity;
 import com.example.lonse.view.SlideLayout;
+
 import java.util.ArrayList;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ListViewAdapter extends BaseAdapter {
@@ -38,13 +40,13 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
-        Log.d(TAG, "getView里面的:position: " + position + "; convertView: " + convertView + "; parent: " + parent);
+//        Log.d(TAG, "getView里面的:position: " + position + "; convertView: " + convertView + "; parent: " + parent);
        ViewHolder holder;
         if(convertView == null){
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.slide_list_item_content, parent,false);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
-            Log.d(TAG, "getView里面的: holder: " + holder + "；convertView：" + convertView);
+//            Log.d(TAG, "getView里面的: holder: " + holder + "；convertView：" + convertView);
             }else{
                 holder = (ViewHolder) convertView.getTag();
             }

@@ -31,9 +31,9 @@ public class ListViewActivity extends AppCompatActivity {
     };
 
     private final String[] MESSAGE = new String[]{
-            "你好，我是EZ", "你好，我是阿木木", "你好，我是瑞兹", "你好，我是盖伦", "你好，我是乌鸦", "你好，我是锤石",
-            "你好，我是艾希", "你好，我是维鲁斯", "你好，我是奥恩", "你好，我是大树", "你好，我是女警", "你好，我是烬",
-            "你好，我是皇子", "你好，我是龙龟", "你好，我是亚索", "你好，我是千珏", "你好，我是机器人", "你好，我是牛头"
+            "ez@qq.com", "amumu@qq.com", "ruizi@qq.com", "gailun@qq.com", "wuya@qq.com", "chuishi@qq.com",
+            "aixi@qq.com", "weilusi@qq.com", "aoen@qq.com", "tree@qq.com", "police@qq.com" , "jin@qq.com",
+            "huangzi@qq.com", "guigui@qq.com", "tuoersuo@qq.com", "qianjue@qq.com", "android@qq.com", "cow@qq.com"
     };
 
     @Override
