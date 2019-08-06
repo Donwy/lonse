@@ -16,48 +16,62 @@
             android:layout_height="wrap_content"
             android:text="@string/bt_webview"
             android:textAllCaps="false" />
+
         <Button
             android:id="@+id/bt_sidebar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="@string/bt_sidebar"/>
+
         <Button
         android:id="@+id/bt_slidemenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="@string/bt_slidemenu"/>
+
         <Button
             android:id="@+id/bt_passwordchange"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="@string/bt_passwordchange"/>
+
         <Button
             android:id="@+id/bt_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="@string/bt_login"/>
+
         <Button
             android:id="@+id/bt_set"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="@string/bt_set"/>
+
         <!--<Button-->
             <!--android:id="@+id/bt_accouts"-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="wrap_content"-->
             <!--android:textAllCaps="false"-->
             <!--android:text="@string/bt_accounts"/>-->
+
         <Button
             android:id="@+id/bt_listview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="@string/bt_listview"/>
+
+        <Button
+            android:id="@+id/bt_recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="@string/bt_recycleview"/>
     </LinearLayout>
 
 

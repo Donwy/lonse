@@ -15,17 +15,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button buttonWebview = (Button) findViewById(R.id.bt_webview);
+        Button buttonWebView = (Button) findViewById(R.id.bt_webview);
         Button buttonSidebar = (Button) findViewById(R.id.bt_sidebar);
         Button buttonSlideMenu = (Button) findViewById(R.id.bt_slidemenu);
         Button buttonPwChange = (Button) findViewById(R.id.bt_passwordchange);
         Button buttonSet = (Button) findViewById(R.id.bt_set);
         Button buttonLogin = (Button) findViewById(R.id.bt_login);
 //        Button buttonAccounts = (Button) findViewById(R.id.bt_accouts);
-        Button buttonListview = (Button) findViewById(R.id.bt_listview);
+        Button buttonListView = (Button) findViewById(R.id.bt_listview);
+        Button buttonRecyclerView = (Button) findViewById(R.id.bt_recycleView);
 //        Button buttonGesturePassword = (Button) findViewById(R.id.bt_slidemenu);
         //webview的使用
-        buttonWebview.setOnClickListener(new View.OnClickListener() {
+        buttonWebView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
@@ -85,14 +86,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //登录界面的使用
-        buttonListview.setOnClickListener(new View.OnClickListener() {
+        //listView界面的使用
+        buttonListView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
                 startActivity(intent);
             }
         });
+        //RecyclerView界面的使用
+        buttonRecyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
         //手势密码界面
 //        buttonGesturePassword.setOnClickListener(new View.OnClickListener() {
 //            @Override

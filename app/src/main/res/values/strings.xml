@@ -9,6 +9,7 @@
     <string name="bt_set">set</string>
     <string name="bt_accounts">accounts</string>
     <string name="bt_listview">listview</string>
+    <string name="bt_recycleview">recycleview</string>
 
 
     <string name="menu_home">Home</string>
