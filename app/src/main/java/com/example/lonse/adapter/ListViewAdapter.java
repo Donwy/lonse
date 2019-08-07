@@ -55,7 +55,7 @@ public class ListViewAdapter extends BaseAdapter {
             }
             holder.civPhoto.setImageResource(mData.get(position).getmPhoto());
             holder.tvName.setText(mData.get(position).getmName());
-        Log.d(TAG, "getView: " + mData.get(position).getmName());
+            Log.d(TAG, "getView: " + mData.get(position).getmName());
             holder.tvMessage.setText(mData.get(position).getmMessage());
 
             holder.tvName.setOnClickListener(new View.OnClickListener() {

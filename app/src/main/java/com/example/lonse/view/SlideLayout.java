@@ -3,6 +3,7 @@ package com.example.lonse.view;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -98,8 +99,8 @@ public class SlideLayout extends FrameLayout {
             case MotionEvent.ACTION_DOWN:
                 downX = startX = x;
                 downY = startY = y;
-//                Log.d(TAG, "onTouchEvent:点击事件的这个startX: "+ startX + " 这个startY："+ startY);
-//                Log.d(TAG, "onTouchEvent:点击事件的这个x: "+ x + " 这个y："+ y);
+                Log.d(TAG, "onTouchEvent:点击事件的这个startX: "+ startX + " 这个startY："+ startY);
+                Log.d(TAG, "onTouchEvent:点击事件的这个x: "+ x + " 这个y："+ y);
                 break;
             case MotionEvent.ACTION_MOVE:
                 final float dx = (int) (x - startX);                     //x的滑动位移

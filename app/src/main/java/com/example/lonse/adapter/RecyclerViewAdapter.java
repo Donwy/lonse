@@ -1,7 +1,6 @@
 package com.example.lonse.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +25,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private List<ProductEntity> mProductList;
 
     public RecyclerViewAdapter(Context context, List<ProductEntity> productList){
-        Log.d("test == ", "productList == " + productList.toString());
         this.context = context;
         this.mProductList = productList;
     }
@@ -35,14 +33,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.recycle_item, null);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recycle_item, viewGroup, false);
         return new ViewHolder(view);
     }
 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        Log.d("test == ", "viewHolder == " + viewHolder.toString());
         Glide.with(context).load(mProductList.get(position).getImg()).into(viewHolder.imageView);
         viewHolder.textView.setText(mProductList.get(position).getTitle());
     }
