@@ -17,8 +17,8 @@ import com.example.lonse.entity.ProductEntity;
 import com.example.lonse.view.SpacesItemDecoration;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 
 /**
@@ -97,20 +97,22 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
     }
     private void addProductList() {
-        Random random = new Random();
+//        Random random = new Random();
         for (int i = 0; i < img.length; i++) {
-            int n = random.nextInt(img.length);
-            productList.add(new ProductEntity(img[n],title[n]));
+//            int n = random.nextInt(img.length);
+            productList.add(new ProductEntity(img[i],title[i]));
         }
+        Collections.shuffle(productList);
     }
 
     /**初始化数据*/
     private void initProductList() {
         productList  = new ArrayList<>();
-        Random random = new Random();
+//        Random random = new Random();
+
         for (int i = 0; i < img.length; i++) {
-            int n = random.nextInt(img.length);
-            productList.add(new ProductEntity(img[n],title[n]));
+//            int n = random.nextInt(img.length);
+            productList.add(new ProductEntity(img[i],title[i]));
         }
     }
 
