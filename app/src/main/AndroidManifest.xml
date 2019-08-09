@@ -41,6 +41,12 @@
         <activity android:name=".activity.RecyclerViewActivity"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
+        <activity android:name=".activity.SelectorListViewActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            ></activity>
+        <activity android:name=".activity.SelectorRecyclerViewActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            ></activity>
     </application>
 
 

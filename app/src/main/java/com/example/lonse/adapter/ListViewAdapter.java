@@ -1,6 +1,5 @@
 package com.example.lonse.adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,20 +22,25 @@ public class ListViewAdapter extends BaseAdapter {
     private static final String TAG = "ListViewAdapter";
     private ArrayList<ContactEntity> mData;
     private SlideLayout mSlideLayout;
+    ViewHolder holder;
 
     public ListViewAdapter(ArrayList<ContactEntity> data){
         this.mData = data;
     }
+
+    /**返回数据的长度*/
     @Override
     public int getCount() {
         return mData.size();
     }
 
+    /**返回当前item的位置*/
     @Override
     public Object getItem(int position) {
         return mData.get(position);
     }
 
+    /**返回当前item的id*/
     @Override
     public long getItemId(int position) {
         return position;
@@ -45,7 +49,7 @@ public class ListViewAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
 
-       ViewHolder holder;
+
         if(convertView == null){
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.slide_list_item_content, parent,false);
             holder = new ViewHolder(convertView);
@@ -55,7 +59,7 @@ public class ListViewAdapter extends BaseAdapter {
             }
             holder.civPhoto.setImageResource(mData.get(position).getmPhoto());
             holder.tvName.setText(mData.get(position).getmName());
-            Log.d(TAG, "getView: " + mData.get(position).getmName());
+//            Log.d(TAG, "getView: " + mData.get(position).getmName());
             holder.tvMessage.setText(mData.get(position).getmMessage());
 
             holder.tvName.setOnClickListener(new View.OnClickListener() {

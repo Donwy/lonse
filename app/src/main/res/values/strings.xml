@@ -10,7 +10,8 @@
     <string name="bt_accounts">accounts</string>
     <string name="bt_listview">listview</string>
     <string name="bt_recycleview">recycleview</string>
-
+    <string name="bt_selectorlistview">selectorlistview</string>
+    <string name="bt_selectorrecycleview">selectorrecycleview</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
