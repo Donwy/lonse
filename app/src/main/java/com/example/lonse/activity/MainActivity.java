@@ -23,9 +23,10 @@ public class MainActivity extends AppCompatActivity {
         Button buttonLogin = (Button) findViewById(R.id.bt_login);
 //        Button buttonAccounts = (Button) findViewById(R.id.bt_accouts);
         Button buttonListView = (Button) findViewById(R.id.bt_listView);
+        Button buttonRecyclerView = (Button) findViewById(R.id.bt_recycleView);
         Button buttonSelectorListView = (Button) findViewById(R.id.bt_selectorListView);
         Button buttonSelectorRecyclerView = (Button) findViewById(R.id.bt_selectorRecycleView);
-
+        Button buttonViewPage = (Button) findViewById(R.id.bt_viewPage);
 
         //webview的使用
         buttonWebView.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +97,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //RecyclerView界面的使用
+        buttonRecyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+                startActivity(intent);
+            }
+        });
         //selectorListView界面的使用
         buttonSelectorListView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +121,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //viewPage界面的使用
+        buttonViewPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ViewPageActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 

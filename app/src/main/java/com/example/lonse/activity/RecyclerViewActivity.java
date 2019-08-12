@@ -73,7 +73,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 addProductList();                   //为什么不用initProductList？因为adapter需要对同一个productList进行通知状态改变了，
                                                     // 使用initProducList会重新new一个producList（使用System.identityHashCode(object),可以发现其新旧productList内存地址是不一样的
                 adapter.notifyDataSetChanged();
-
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -97,9 +96,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
     }
     private void addProductList() {
-//        Random random = new Random();
+
         for (int i = 0; i < img.length; i++) {
-//            int n = random.nextInt(img.length);
             productList.add(new ProductEntity(img[i],title[i]));
         }
         Collections.shuffle(productList);
@@ -108,10 +106,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     /**初始化数据*/
     private void initProductList() {
         productList  = new ArrayList<>();
-//        Random random = new Random();
-
         for (int i = 0; i < img.length; i++) {
-//            int n = random.nextInt(img.length);
             productList.add(new ProductEntity(img[i],title[i]));
         }
     }

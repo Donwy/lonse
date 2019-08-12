@@ -84,6 +84,12 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="@string/bt_selectorrecycleview"/>
+        <Button
+            android:id="@+id/bt_viewPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="@string/bt_viewPage"/>
     </LinearLayout>
 
 

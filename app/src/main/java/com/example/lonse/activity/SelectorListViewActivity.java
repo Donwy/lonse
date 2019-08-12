@@ -29,6 +29,7 @@ public class SelectorListViewActivity extends AppCompatActivity {
     private Button button1;
     private Button button2;
     private Button button3;
+    private Button button4;
     private List<String> mDataList;
     private int num = 0;
 
@@ -42,6 +43,7 @@ public class SelectorListViewActivity extends AppCompatActivity {
         button1 = (Button) findViewById(R.id.bt_selectAll);
         button2 = (Button) findViewById(R.id.bt_select_reverse);
         button3 = (Button) findViewById(R.id.bt_select_cancel);
+        button4 = (Button) findViewById(R.id.bt_select_edit);
 
         //初始化数据
         initData();
@@ -61,8 +63,7 @@ public class SelectorListViewActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Log.d(TAG, "onClick: map == 123" + mAdapter.map);
-//                Log.d(TAG, "onClick: map == 1234" + mAdapter.map.containsKey(6));
+
                 for(int i = 0; i < mDataList.size(); i++) {
                     if (mAdapter.map.containsKey(i)) {
                         mAdapter.map.remove(i);
@@ -84,6 +85,15 @@ public class SelectorListViewActivity extends AppCompatActivity {
                 }
                 num = 0;
                 dataChanged();
+            }
+        });
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                button1.setVisibility(View.VISIBLE);
+                button2.setVisibility(View.VISIBLE);
+                button3.setVisibility(View.VISIBLE);
+                button4.setVisibility(View.GONE);
             }
         });
     }
