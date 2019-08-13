@@ -40,10 +40,10 @@ public class SelectorListViewActivity extends AppCompatActivity {
         selectorListView = (ListView) findViewById(R.id.select_listView);
         textView = (TextView) findViewById(R.id.list_selector_item_tv);
         checkBox = (CheckBox) findViewById(R.id.list_selector_item_cb);
-        button1 = (Button) findViewById(R.id.bt_selectAll);
-        button2 = (Button) findViewById(R.id.bt_select_reverse);
-        button3 = (Button) findViewById(R.id.bt_select_cancel);
-        button4 = (Button) findViewById(R.id.bt_select_edit);
+        button1 = (Button) findViewById(R.id.bt_list_selectAll);
+        button2 = (Button) findViewById(R.id.bt_list_select_reverse);
+        button3 = (Button) findViewById(R.id.bt_list_select_cancel);
+        button4 = (Button) findViewById(R.id.bt_list_select_edit);
 
         //初始化数据
         initData();

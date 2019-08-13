@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -56,9 +55,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
         initProductList();
         adapter = new RecyclerViewAdapter(recyclerView.getContext(), productList);
         final Context context= recyclerView.getContext();
-        Log.d(TAG, "text: == 1  " + System.identityHashCode(productList) + productList);
+//        Log.d(TAG, "text: == 1  " + System.identityHashCode(productList) + productList);
         recyclerView.setAdapter(adapter);
-        Log.d(TAG, "text: == 1.1  " + System.identityHashCode(adapter)+ adapter);
+//        Log.d(TAG, "text: == 1.1  " + System.identityHashCode(adapter)+ adapter);
 
         //设置item之间的间隔
         SpacesItemDecoration decoration=new SpacesItemDecoration(10);
