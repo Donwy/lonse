@@ -29,10 +29,13 @@ public class SelectorRecyclerViewAdapter extends RecyclerView.Adapter<SelectorRe
     private Context mContext;
     private List<String> mLists;
     public Map<Integer, Boolean> map = new HashMap<>();
+    Boolean mEditor = false;
 
-    public SelectorRecyclerViewAdapter(Context context, List<String> mLists){
+    public SelectorRecyclerViewAdapter(Context context, List<String> lists, Boolean editor){
         this.mContext = context;
-        this.mLists = mLists;
+        this.mLists = lists;
+        this.mEditor = editor;
+
     }
 
     @NonNull
@@ -50,6 +53,11 @@ public class SelectorRecyclerViewAdapter extends RecyclerView.Adapter<SelectorRe
 
 
         viewHolder.tv.setText(mLists.get(position));
+        if (!mEditor) {
+            viewHolder.chk.setVisibility(View.GONE);
+        } else {
+            viewHolder.chk.setVisibility(View.VISIBLE);
+        }
         viewHolder.chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isSelected) {
@@ -68,6 +76,10 @@ public class SelectorRecyclerViewAdapter extends RecyclerView.Adapter<SelectorRe
         } else {
             viewHolder.chk.setChecked(false);
         }
+    }
+
+    public void edit(){
+
     }
 
     @Override

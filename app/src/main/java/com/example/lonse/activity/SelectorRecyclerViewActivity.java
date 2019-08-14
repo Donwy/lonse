@@ -20,16 +20,20 @@ import java.util.List;
  * @date 2019/8/9
  */
 public class SelectorRecyclerViewActivity extends AppCompatActivity {
+    private static final String TAG = "SelectorRecyclerViewAct";
 
     private RecyclerView recyclerView;
     private List<String> mLists;
     private SelectorRecyclerViewAdapter selectorRecyclerViewAdapter;
     private int num = 0;
+    private Boolean mEditor = false;
 
     private Button btn1;
     private Button btn2;
     private Button btn3;
     private Button btn4;
+    private Button btn5;
+
 
 
     @Override
@@ -41,10 +45,11 @@ public class SelectorRecyclerViewActivity extends AppCompatActivity {
         btn2 = (Button) findViewById(R.id.bt_recycler_select_reverse);
         btn3 = (Button) findViewById(R.id.bt_recycler_select_cancel);
         btn4 = (Button) findViewById(R.id.bt_recycler_select_edit);
+        btn5 = (Button) findViewById(R.id.bt_recycler_select_edited);
 
         init();
         recyclerView.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL, false));
-        selectorRecyclerViewAdapter = new SelectorRecyclerViewAdapter(this, mLists);
+        selectorRecyclerViewAdapter = new SelectorRecyclerViewAdapter(this, mLists,false);
         recyclerView.setAdapter(selectorRecyclerViewAdapter);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -89,8 +94,25 @@ public class SelectorRecyclerViewActivity extends AppCompatActivity {
                 btn2.setVisibility(View.VISIBLE);
                 btn3.setVisibility(View.VISIBLE);
                 btn4.setVisibility(View.GONE);
+                btn5.setVisibility(View.VISIBLE);
+                selectorRecyclerViewAdapter = new SelectorRecyclerViewAdapter(recyclerView.getContext(), mLists,true);
+                recyclerView.setAdapter(selectorRecyclerViewAdapter);
             }
         });
+
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn1.setVisibility(View.GONE);
+                btn2.setVisibility(View.GONE);
+                btn3.setVisibility(View.GONE);
+                btn4.setVisibility(View.VISIBLE);
+                btn5.setVisibility(View.GONE);
+                selectorRecyclerViewAdapter = new SelectorRecyclerViewAdapter(recyclerView.getContext(), mLists,false);
+                recyclerView.setAdapter(selectorRecyclerViewAdapter);
+            }
+        });
+
     }
 
     public void init() {
@@ -99,9 +121,11 @@ public class SelectorRecyclerViewActivity extends AppCompatActivity {
             mLists.add("item" + i);
         }
     }
+
     public void  dataChanged() {
         selectorRecyclerViewAdapter.notifyDataSetChanged();
         Toast toast = Toast.makeText(this, "选中了 " + num, Toast.LENGTH_SHORT);
         toast.show();
     }
+
 }
