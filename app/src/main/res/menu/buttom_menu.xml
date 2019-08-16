@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_one"
+        android:icon="@drawable/home"
+        android:title="首页">
+    </item>
+    <item
+        android:id="@+id/menu_two"
+        android:icon="@drawable/book"
+        android:title="书籍">
+    </item>
+    <item
+        android:id="@+id/menu_three"
+        android:icon="@drawable/plus_circle"
+        android:title="添加">
+    </item>
+    <item
+        android:id="@+id/menu_four"
+        android:icon="@drawable/heart"
+        android:title="收藏">
+    </item>
+    <item
+        android:id="@+id/menu_five"
+        android:icon="@drawable/user"
+        android:title="我的">
+    </item>
+</menu>

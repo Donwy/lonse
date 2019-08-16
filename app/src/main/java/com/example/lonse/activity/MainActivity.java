@@ -125,10 +125,11 @@ public class MainActivity extends AppCompatActivity {
         buttonViewPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ViewPageActivity.class);
+                Intent intent = new Intent(MainActivity.this, BottomNavigationViewActivity.class);
                 startActivity(intent);
             }
         });
+
 
 
 

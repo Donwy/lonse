@@ -1,6 +1,5 @@
 package com.example.lonse.activity;
 
-import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -54,13 +53,13 @@ public class RecyclerViewActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         initProductList();
         adapter = new RecyclerViewAdapter(recyclerView.getContext(), productList);
-        final Context context= recyclerView.getContext();
+//        final Context context = recyclerView.getContext();
 //        Log.d(TAG, "text: == 1  " + System.identityHashCode(productList) + productList);
         recyclerView.setAdapter(adapter);
 //        Log.d(TAG, "text: == 1.1  " + System.identityHashCode(adapter)+ adapter);
 
         //设置item之间的间隔
-        SpacesItemDecoration decoration=new SpacesItemDecoration(10);
+        SpacesItemDecoration decoration = new SpacesItemDecoration(10);
         recyclerView.addItemDecoration(decoration);
 
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout);

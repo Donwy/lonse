@@ -17,8 +17,7 @@ public class ViewPagerAdapter extends PagerAdapter {
     private ArrayList<View> viewLists;
     private List<String> titles;
 
-    public ViewPagerAdapter(){
-    }
+
 
     public ViewPagerAdapter(ArrayList<View> viewLists, List<String> titles){
         super();
@@ -41,7 +40,6 @@ public class ViewPagerAdapter extends PagerAdapter {
     /**PagerAdaPeter只缓存要显示的图片，如果滑动的图片超出了缓存的范围*/
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-//        super.destroyItem(container, position, object);
         container.removeView(viewLists.get(position));
     }
 

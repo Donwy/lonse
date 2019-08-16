@@ -29,9 +29,6 @@
         <activity android:name=".activity.SetActivity"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
-        <!--<activity android:name=".AccountsActivity"-->
-            <!--android:theme="@style/AppTheme.NoActionBar"-->
-            <!--&gt;</activity>-->
         <activity android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
@@ -48,6 +45,9 @@
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
         <activity android:name=".activity.ViewPageActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            ></activity>
+        <activity android:name=".activity.BottomNavigationViewActivity"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
     </application>
