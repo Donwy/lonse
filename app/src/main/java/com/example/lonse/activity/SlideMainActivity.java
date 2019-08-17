@@ -79,23 +79,11 @@ public class SlideMainActivity extends AppCompatActivity {
 
             }
 
-            /**
-             * Called when a sliding pane becomes slid completely open. The pane may or may not
-             * be interactive at this point depending on how much of the pane is visible.
-             *
-             * @param panel The child view that was slid to an open position, revealing other panes
-             */
             @Override
             public void onPanelOpened(@NonNull View panel) {
 
             }
 
-            /**
-             * Called when a sliding pane becomes slid completely closed. The pane is now guaranteed
-             * to be interactive. It may now obscure other views in the layout.
-             *
-             * @param panel The child view that was slid to a closed position
-             */
             @Override
             public void onPanelClosed(@NonNull View panel) {
 

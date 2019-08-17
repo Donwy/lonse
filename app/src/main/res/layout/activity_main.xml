@@ -4,7 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -52,12 +55,6 @@
             android:textAllCaps="false"
             android:text="@string/bt_set"/>
 
-        <!--<Button-->
-            <!--android:id="@+id/bt_accouts"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textAllCaps="false"-->
-            <!--android:text="@string/bt_accounts"/>-->
 
         <Button
             android:id="@+id/bt_listView"
@@ -90,7 +87,13 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="@string/bt_viewPage"/>
+        <Button
+            android:id="@+id/bt_gesture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="@string/bt_gesture"/>
     </LinearLayout>
-
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

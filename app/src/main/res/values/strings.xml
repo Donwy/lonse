@@ -13,6 +13,7 @@
     <string name="bt_selectorlistview">selectorlistview</string>
     <string name="bt_selectorrecycleview">selectorrecycleview</string>
     <string name="bt_viewPage">viewPage</string>
+    <string name="bt_gesture">gesture</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -66,4 +67,6 @@
     <string name="pw_find"><u>找回密码</u></string>
     <string name="signIn">注册新账号</string>
     <string name="protocol">登录注册即代表同意<u>服务条款</u></string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>

@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         Button buttonSelectorListView = (Button) findViewById(R.id.bt_selectorListView);
         Button buttonSelectorRecyclerView = (Button) findViewById(R.id.bt_selectorRecycleView);
         Button buttonViewPage = (Button) findViewById(R.id.bt_viewPage);
+        Button buttonGesture = (Button) findViewById(R.id.bt_gesture);
+
 
         //webview的使用
         buttonWebView.setOnClickListener(new View.OnClickListener() {
@@ -129,7 +131,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        //viewPage界面的使用
+        buttonGesture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, GesturePasswordActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 

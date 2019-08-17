@@ -10,16 +10,20 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.lonse.R;
+import com.example.lonse.view.GesturePassword;
 
 /**
  * @author Donvy_y
  * @date 2019/8/15
  */
 public class BookFragment extends Fragment {
+    private GesturePassword gesturePassword;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_fragment_book, container,false);
         return view;
     }
+
 }
