@@ -4,10 +4,20 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Point;
+import android.graphics.PointF;
+import android.os.Build;
+import android.util.ArraySet;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.annotation.RequiresApi;
+
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
@@ -17,28 +27,39 @@ import static androidx.constraintlayout.widget.Constraints.TAG;
  */
 public class GesturePassword extends View {
 
-    /**正常显示的颜色*/
-    private Paint NORMAL_COLOR;
-    /**选择显示的颜色*/
-    private Paint SELECT_COLOR;
-    /**错误显示的颜色*/
-    private Paint ERROR_COLOR;
+
     /**圆的画笔*/
     private Paint mCirclePaint;
+    /**选中时的笔*/
+    private Paint mSelectedPaint;
     /**线条的画笔*/
     private Paint mLinePaint;
-    private final int row = 3;
     /**九宫格的边长*/
     private int mPatternWidth;
     /**圆的X、Y坐标*/
     private float mCircleX;
     private float mCircleY;
     private float mCircleR;
+    //存储未被选中的圆点
+    private List<CirclePoints> mCirclePointList;
+    //存储选中的原点
+    private Set<CirclePoints> mSelectedPointSet;
+    //密码
+    private LinkedHashSet<CirclePoints> mPasswordSet;
+    //滑动状态
+    private final int NORMAL = 1;
+    private final int MOVE = 3;
+    private int mStatus = NORMAL;
+    //初始密码
+    private final String INIT_PASSWORD = "12589";
+    private boolean unlock = false;
 
-    private mCirclePoints[][] mCirclePoints = new mCirclePoints[3][3];
 
 
 
+
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public GesturePassword(Context context, AttributeSet attrs) {
         super(context, attrs);
         initPaint();
@@ -48,16 +69,7 @@ public class GesturePassword extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
-
-        Log.d(TAG, "initPaint:  mPatternWidth == :" + mPatternWidth);
-
     }
-
-
-
-
-
 
     private Paint getPaint(int color) {
         Paint paint = new Paint();
@@ -68,27 +80,93 @@ public class GesturePassword extends View {
         return paint;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void initPaint() {
-        mCirclePaint = getPaint(Color.parseColor("#000000"));
-        SELECT_COLOR = getPaint(Color.parseColor("#aaaaff"));
+        mCirclePaint = getPaint(Color.parseColor("#aaeeff"));
+        mSelectedPaint = getPaint(Color.parseColor("#FFD700"));
+        mLinePaint = getPaint(Color.parseColor("#FFD700"));
+        mLinePaint.setStrokeWidth(10);
 
-        mPatternWidth = Math.min( getResources().getDisplayMetrics().widthPixels, getResources().getDisplayMetrics().heightPixels);
+        mPatternWidth = Math.min(getResources().getDisplayMetrics().widthPixels, getResources().getDisplayMetrics().heightPixels);
         mCircleX = mPatternWidth / 2;
         mCircleY = mPatternWidth / 2;
+        mCircleR = mPatternWidth / 15;
 
-        mCircleR = mPatternWidth / 10;
-        Log.d(TAG, "initPaint: 1:" + mPatternWidth);
-        Log.d(TAG, "initPaint: " + mCircleX +", " +mCircleY +", "+mCircleR );
+        mCirclePointList = new ArrayList<>();
+        mSelectedPointSet =  new ArraySet<>();
+        mPasswordSet = new LinkedHashSet<>();
 
+
+        Log.d(TAG, "initPaint: 1: ==" + mPatternWidth);
+        Log.d(TAG, "initPaint: ==" + mCircleX +", " + mCircleY + ", " + mCircleR );
+        addNinePoints();
 
     }
+    public void addNinePoints() {
+
+        CirclePoints mCirclePoints = null;
+
+        for (int i = 1; i <= 3; i++) {
+
+            float x2 = mCircleX / 3;
+            float y = mCircleY / 2 * i;
+            mCirclePoints = new CirclePoints(1 + (i - 1) * 3);
+            mCirclePoints.set(x2, y);
+            mCirclePointList.add(mCirclePoints);
+
+            float x1 = mCircleX;
+            mCirclePoints = new CirclePoints(2 + (i - 1) * 3);
+            mCirclePoints.set(x1, y);
+            mCirclePointList.add(mCirclePoints);
+
+            float x3 = mPatternWidth - mCircleX / 3;
+            mCirclePoints = new CirclePoints(3 + (i - 1) * 3);
+            mCirclePoints.set(x3, y);
+            mCirclePointList.add(mCirclePoints);
+        }
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawCircle(mCircleX,mCircleY,mCircleR,mCirclePaint);
+        switch (mStatus) {
+            case NORMAL:
+                drawCircle(canvas);
+//                for (CirclePoints pointList : mCirclePointList) {
+//                    canvas.drawCircle(pointList.x, pointList.y, mCircleR, mCirclePaint);
+//                }
+                break;
+            case MOVE:
+                drawCircle(canvas);
+//                for (CirclePoints pointList : mCirclePointList) {
+//                    canvas.drawCircle(pointList.x, pointList.y, mCircleR, mCirclePaint);
+//                }
+                if (mSelectedPointSet.size() > 0) {
+                    for (CirclePoints pointList : mSelectedPointSet) {
+                        canvas.drawCircle(pointList.x, pointList.y, mCircleR, mSelectedPaint);
+                        mPasswordSet.add(pointList);
+
+                    }
+                    CirclePoints pointA = mPasswordSet.iterator().next();
+                    for (CirclePoints point : mPasswordSet) {
+                            canvas.drawLine(pointA.x,pointA.y,point.x, point.y, mLinePaint);
+                            pointA = point;
+                        }
+                }
+                break;
+        }
     }
 
-
+    public void drawCircle(Canvas canvas) {
+        if (unlock) {
+            mCirclePaint.setColor(Color.parseColor("#00ff00"));
+        } else {
+            mCirclePaint = getPaint(Color.parseColor("#aaeeff"));
+        }
+        for (CirclePoints pointList : mCirclePointList) {
+            canvas.drawCircle(pointList.x, pointList.y, mCircleR, mCirclePaint);
+        }
+    }
 
 
 
@@ -98,17 +176,55 @@ public class GesturePassword extends View {
 
     }
 
-}
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        float downX = event.getX();
+        float downY = event.getY();
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_MOVE:
+                for (CirclePoints point : mCirclePointList) {
+                    mStatus = MOVE;
+                    float circleX = point.x;
+                    float circleY = point.y;
+                    if (isInsideCircle(downX, downY, circleX, circleY)) {
+                        mSelectedPointSet.add(point);
+                    }
+                }
+                Log.d(TAG, "onTouchEvent: + "  + mSelectedPointSet);
+                break;
+            case MotionEvent.ACTION_UP:
+                mStatus = NORMAL;
+                StringBuffer password = new StringBuffer();
+                for (CirclePoints point : mPasswordSet) {
+                    password.append(point.getNumber());
+                }
+                if (INIT_PASSWORD.equals(password.toString())) {
+                    unlock = true;
+                }
+                mSelectedPointSet.clear();
+                mPasswordSet.clear();
+                break;
+        }
+        invalidate();
+        return true;
+    }
 
-    class mCirclePoints extends Point {
+    private boolean isInsideCircle(float downX, float downY, float CircleX, float circleY) {
+        return mCircleR > Math.sqrt(Math.pow(downX - CircleX, 2) + Math.pow(downY - circleY, 2));
+    }
+
+    class CirclePoints extends PointF {
         private int number;
 
-        public mCirclePoints(int number) {
+        public CirclePoints(int number) {
             this.number = number;
         }
 
         public int getNumber() {
             return number;
         }
+
     }
+}
 
