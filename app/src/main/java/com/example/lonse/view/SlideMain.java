@@ -34,20 +34,6 @@ public class SlideMain extends SlidingPaneLayout {
         Log.d(TAG, "SlideMain:的 " + mEdgeSlop);
     }
 
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event) {
-//
-//        /**
-//         * 获取x,y的值
-//         */
-//        final float x = event.getX();
-//        final float y = event.getY();
-//        switch (event.getAction()){
-//
-//        }
-//        return true;
-//    }
-
 
     /**
      * 拦截手势事件

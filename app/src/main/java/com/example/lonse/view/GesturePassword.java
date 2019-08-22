@@ -132,15 +132,9 @@ public class GesturePassword extends View {
         switch (mStatus) {
             case NORMAL:
                 drawCircle(canvas);
-//                for (CirclePoints pointList : mCirclePointList) {
-//                    canvas.drawCircle(pointList.x, pointList.y, mCircleR, mCirclePaint);
-//                }
                 break;
             case MOVE:
                 drawCircle(canvas);
-//                for (CirclePoints pointList : mCirclePointList) {
-//                    canvas.drawCircle(pointList.x, pointList.y, mCircleR, mCirclePaint);
-//                }
                 if (mSelectedPointSet.size() > 0) {
                     for (CirclePoints pointList : mSelectedPointSet) {
                         canvas.drawCircle(pointList.x, pointList.y, mCircleR, mSelectedPaint);
@@ -156,6 +150,8 @@ public class GesturePassword extends View {
                 break;
         }
     }
+
+
 
     public void drawCircle(Canvas canvas) {
         if (unlock) {
@@ -182,6 +178,17 @@ public class GesturePassword extends View {
         float downY = event.getY();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                float minR = 1000000;
+                for (CirclePoints point : mCirclePointList) {
+                    if (minR > Math.sqrt(Math.pow(downX - point.x, 2) + Math.pow(downY - point.y, 2))) {
+                        minR = (float) Math.sqrt(Math.pow(downX - point.x, 2) + Math.pow(downY - point.y, 2));
+                    }
+                }
+                //如果点击的点落在9宫格的任意点内，则屏蔽掉父组件的事件获取。
+                if (mCircleR > minR){
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+            break;
             case MotionEvent.ACTION_MOVE:
                 for (CirclePoints point : mCirclePointList) {
                     mStatus = MOVE;
@@ -191,7 +198,6 @@ public class GesturePassword extends View {
                         mSelectedPointSet.add(point);
                     }
                 }
-                Log.d(TAG, "onTouchEvent: + "  + mSelectedPointSet);
                 break;
             case MotionEvent.ACTION_UP:
                 mStatus = NORMAL;
@@ -214,6 +220,7 @@ public class GesturePassword extends View {
         return mCircleR > Math.sqrt(Math.pow(downX - CircleX, 2) + Math.pow(downY - circleY, 2));
     }
 
+
     class CirclePoints extends PointF {
         private int number;
 
@@ -224,7 +231,6 @@ public class GesturePassword extends View {
         public int getNumber() {
             return number;
         }
-
     }
 }
 

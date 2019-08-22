@@ -10,14 +10,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.lonse.R;
-import com.example.lonse.view.GesturePassword;
 
 /**
  * @author Donvy_y
  * @date 2019/8/15
  */
 public class BookFragment extends Fragment {
-    private GesturePassword gesturePassword;
 
     @Nullable
     @Override
