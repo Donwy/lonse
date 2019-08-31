@@ -167,9 +167,9 @@ public class SlideLayout extends FrameLayout {
     }
 
     @Override
-    public void computeScroll(){
+    public void computeScroll() {
         super.computeScroll();
-        if(mScroller.computeScrollOffset()){
+        if(mScroller.computeScrollOffset()) {
             scrollTo(mScroller.getCurrX(),mScroller.getCurrY());
             invalidate();
         }
@@ -178,7 +178,7 @@ public class SlideLayout extends FrameLayout {
     public final void openMenu() {
         mScroller.startScroll(getScrollX(), getScrollY(), mMenuWidth - getScrollX(), 0);
         invalidate();
-        if(onSlideChangeListen != null){
+        if(onSlideChangeListen != null) {
             onSlideChangeListen.onMenuOpen(this);
         }
     }
@@ -186,7 +186,7 @@ public class SlideLayout extends FrameLayout {
     public final void closeMenu() {
         mScroller.startScroll(getScrollX(), getScrollY(), 0 - getScrollX(), 0);
         invalidate();
-        if(onSlideChangeListen != null){
+        if(onSlideChangeListen != null) {
             onSlideChangeListen.onMenuOpen(this);
         }
     }

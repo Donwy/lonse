@@ -54,7 +54,7 @@ public class HomeFragment extends Fragment {
         titles.add("three");
         viewPagerAdapter = new ViewPagerAdapter(viewLists , titles);
 
-        for (String title :titles) {
+        for (String title : titles) {
             tabLayout.addTab(tabLayout.newTab().setText(title));
         }
         tabLayout.setupWithViewPager(viewPager);

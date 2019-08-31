@@ -22,4 +22,5 @@ public class PlusFragment extends Fragment {
         View view = inflater.inflate(R.layout.activity_fragment_plus, container,false);
         return view;
     }
+
 }

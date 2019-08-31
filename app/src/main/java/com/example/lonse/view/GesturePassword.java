@@ -143,7 +143,7 @@ public class GesturePassword extends View {
                     }
                     CirclePoints pointA = mPasswordSet.iterator().next();
                     for (CirclePoints point : mPasswordSet) {
-                            canvas.drawLine(pointA.x,pointA.y,point.x, point.y, mLinePaint);
+                            canvas.drawLine(pointA.x, pointA.y, point.x, point.y, mLinePaint);
                             pointA = point;
                         }
                 }
@@ -178,17 +178,17 @@ public class GesturePassword extends View {
         float downY = event.getY();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                float minR = 1000000;
+                float minR = mCircleR * 2;
                 for (CirclePoints point : mCirclePointList) {
                     if (minR > Math.sqrt(Math.pow(downX - point.x, 2) + Math.pow(downY - point.y, 2))) {
                         minR = (float) Math.sqrt(Math.pow(downX - point.x, 2) + Math.pow(downY - point.y, 2));
                     }
                 }
-                //如果点击的点落在9宫格的任意点内，则屏蔽掉父组件的事件获取。
-                if (mCircleR > minR){
+                //如果点击的点落在9宫格的任意点内，则屏蔽掉父组件viewpager的事件获取（解决横向滑动冲突）。
+                if (mCircleR > minR) {
                     getParent().requestDisallowInterceptTouchEvent(true);
                 }
-            break;
+                break;
             case MotionEvent.ACTION_MOVE:
                 for (CirclePoints point : mCirclePointList) {
                     mStatus = MOVE;

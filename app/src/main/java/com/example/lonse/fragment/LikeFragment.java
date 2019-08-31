@@ -22,4 +22,5 @@ public class LikeFragment extends Fragment {
         View view = inflater.inflate(R.layout.activity_fragment_like, container,false);
         return view;
     }
+
 }
