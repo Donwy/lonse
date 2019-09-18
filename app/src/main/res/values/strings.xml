@@ -14,6 +14,8 @@
     <string name="bt_selectorrecycleview">selectorrecycleview</string>
     <string name="bt_viewPage">viewPage</string>
     <string name="bt_gesture">gesture</string>
+    <string name="bt_user">user</string>
+    <string name="bt_carousel">carousel</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>

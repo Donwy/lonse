@@ -3,6 +3,10 @@
     package="com.example.lonse">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--读写内存块权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--调用相机权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -56,6 +60,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.GesturePasswordActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.UserMessageActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.CarouselActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

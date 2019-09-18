@@ -93,6 +93,18 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="@string/bt_gesture"/>
+        <Button
+            android:id="@+id/bt_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="@string/bt_user"/>
+        <Button
+            android:id="@+id/bt_carousel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="@string/bt_carousel"/>
     </LinearLayout>
     </ScrollView>
 

@@ -28,4 +28,13 @@
         <item name="android:padding">15dp</item>
         <item name="android:textSize">22sp</item>
     </style>
+
+    <style name="popo_show_from_bottom">
+        <item name="android:windowEnterAnimation">@anim/pop_show</item>
+        <item name="android:windowExitAnimation">@anim/pop_dis</item>
+    </style>
+    <style name="popo_show_from_center">
+        <item name="android:windowEnterAnimation">@anim/modal_in</item>
+        <item name="android:windowExitAnimation">@anim/modal_out</item>
+    </style>
 </resources>

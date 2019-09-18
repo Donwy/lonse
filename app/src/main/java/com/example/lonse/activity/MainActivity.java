@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         Button buttonSelectorRecyclerView = (Button) findViewById(R.id.bt_selectorRecycleView);
         Button buttonViewPage = (Button) findViewById(R.id.bt_viewPage);
         Button buttonGesture = (Button) findViewById(R.id.bt_gesture);
+        Button buttonUser = (Button) findViewById(R.id.bt_user);
+        Button buttonCarousel = (Button) findViewById(R.id.bt_carousel);
 
 
         //webview的使用
@@ -131,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //viewPage界面的使用
+        //gesture界面的使用
         buttonGesture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -140,7 +142,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //user界面的使用
+        buttonUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, UserMessageActivity.class);
+                startActivity(intent);
+            }
+        });
 
+        buttonCarousel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CarouselActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
